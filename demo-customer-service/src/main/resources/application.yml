@@ -1,0 +1,9 @@
+server:
+  port: 20000
+spring:
+  application:
+    name: demo-customer-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 49.232.19.175:8848

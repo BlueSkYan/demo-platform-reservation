@@ -1,0 +1,20 @@
+server:
+  port: 88
+spring:
+  application:
+    name: demo-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 49.232.19.175:8848
+    gateway:
+      routes:
+        - id: booking-service-route
+          uri: lb://demo-booking-service
+          predicates:
+            - Path=/api/booking/**
+
+        - id: customer-service-route
+          uri: lb://demo-customer-service
+          predicates:
+            - Path=/api/customer/**
